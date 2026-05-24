@@ -8,10 +8,11 @@ import type { HangulCharacter } from '@/data/hangul-data';
 
 interface FlashcardStepProps {
   character: HangulCharacter;
+  isReview?: boolean;
   onContinue: () => void;
 }
 
-export function FlashcardStep({ character, onContinue }: FlashcardStepProps) {
+export function FlashcardStep({ character, isReview, onContinue }: FlashcardStepProps) {
   const [isRevealed, setIsRevealed] = useState(false);
 
   return (
@@ -34,9 +35,16 @@ export function FlashcardStep({ character, onContinue }: FlashcardStepProps) {
               >
                 <Card className="h-full border-2 border-slate-700 bg-slate-900 shadow-xl hover:border-slate-600 transition-colors">
                   <CardContent className="flex flex-col items-center justify-center h-full p-8">
-                    <span className="text-slate-400 text-sm font-medium uppercase tracking-widest mb-4">
-                      {character.category}
-                    </span>
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-slate-400 text-sm font-medium uppercase tracking-widest">
+                        {character.category}
+                      </span>
+                      {isReview && (
+                        <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full">
+                          Review
+                        </span>
+                      )}
+                    </div>
                     <span className="text-9xl font-bold text-white select-none">
                       {character.character}
                     </span>

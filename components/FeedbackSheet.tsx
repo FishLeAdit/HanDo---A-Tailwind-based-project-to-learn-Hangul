@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle2, XCircle } from 'lucide-react';
+import { CheckCircle2, XCircle, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface FeedbackSheetProps {
@@ -40,7 +40,19 @@ export function FeedbackSheet({ type, message, onContinue }: FeedbackSheetProps)
             >
               {isCorrect ? 'Nice!' : 'Not quite'}
             </p>
-            <p className="text-slate-300 text-sm">{message}</p>
+            <div className="flex items-center gap-2">
+              <p className="text-slate-300 text-sm">{message}</p>
+              {!isCorrect && (
+                <motion.span
+                  initial={{ scale: 1.5, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  className="flex items-center gap-0.5 text-red-400 text-xs font-bold"
+                >
+                  <Heart className="w-3 h-3 fill-red-400" />
+                  -1
+                </motion.span>
+              )}
+            </div>
           </div>
         </div>
 
