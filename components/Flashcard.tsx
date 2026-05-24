@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -14,10 +14,15 @@ interface FlashcardProps {
 export function Flashcard({ character }: FlashcardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
+  // Reset to front face whenever the character changes
+  useEffect(() => {
+    setIsFlipped(false);
+  }, [character.id]);
+
   return (
     <div className="flex flex-col items-center gap-6 w-full max-w-sm mx-auto">
-      <div 
-        className="relative w-full aspect-[3/4] cursor-pointer" 
+      <div
+        className="relative w-full aspect-[3/4] cursor-pointer"
         onClick={() => setIsFlipped(!isFlipped)}
       >
         <AnimatePresence mode="wait">

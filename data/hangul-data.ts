@@ -7,7 +7,7 @@ export interface HangulCharacter {
 }
 
 export const hangulData: HangulCharacter[] = [
-  // Consonants
+  // Consonants (14)
   { id: 'giyeok', character: 'ㄱ', romanization: 'g / k', tip: 'Back of tongue, no air. Like "g" in "game".', category: 'consonant' },
   { id: 'nieun', character: 'ㄴ', romanization: 'n', tip: 'Tip of tongue on ridge. Like "n" in "nice".', category: 'consonant' },
   { id: 'digeut', character: 'ㄷ', romanization: 'd / t', tip: 'Tip of tongue, no air. Like "d" in "dog".', category: 'consonant' },
@@ -22,7 +22,7 @@ export const hangulData: HangulCharacter[] = [
   { id: 'tieut', character: 'ㅌ', romanization: 't', tip: 'Same as ㄷ but with air. Like "t" in "top".', category: 'consonant' },
   { id: 'pieup', character: 'ㅍ', romanization: 'p', tip: 'Same as ㅂ but with air. Like "p" in "pop".', category: 'consonant' },
   { id: 'hieut', character: 'ㅎ', romanization: 'h', tip: 'Exhale from throat. Like "h" in "hat".', category: 'consonant' },
-  // Vowels
+  // Vowels (10)
   { id: 'a', character: 'ㅏ', romanization: 'a', tip: 'Open mouth wide. Like "a" in "father".', category: 'vowel' },
   { id: 'eo', character: 'ㅓ', romanization: 'eo', tip: 'Open mouth, neutral. Like "u" in "cut".', category: 'vowel' },
   { id: 'o', character: 'ㅗ', romanization: 'o', tip: 'Round lips. Like "o" in "go".', category: 'vowel' },
